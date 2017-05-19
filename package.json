@@ -1,23 +1,14 @@
 {
-  "name": "react-project",
+  "name": "basic-project",
   "version": "1.0.0",
-  "description": "A about the react project",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=DEV webpack-dev-server",
-    "build": "NODE_ENV=PROD webpack --progress --watch",
-    "start": "node ./server.js"
+    "build": "webpack",
+    "dev": "webpack-dev-server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lemon365189523/React-Project.git"
-  },
-  "author": "lemon",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lemon365189523/React-Project/issues"
-  },
-  "homepage": "https://github.com/Lemon365189523/React-Project#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -26,9 +17,10 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
-    "html-webpack-plugin": "^2.28.0",
-    "postcss-loader": "^2.0.5",
-    "react-hot-loader": "^3.0.0-beta.7",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },
