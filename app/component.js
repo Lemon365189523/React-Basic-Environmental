@@ -1,12 +1,36 @@
 
 import React from 'react';
-import "./component.css";
-import styles from "./index.less";
+import style from "./component.css";
+import classnames from "classnames/index";
+import { Button, Flex, InputItem ,Toast} from "antd-mobile";
+import {observable, computed, autorun} from "mobx";
 
-const Cpt = () => (
-    <div>
-        <h1 className="test">我是盖世英雄！sssss</h1>
-        <h1 className={styles.test2}>sdfadfadsf</h1>
-    </div>
-);
-export default Cpt;
+
+class Cpt extends React.Component {
+    handleOnClick = ()=> {
+
+    }
+    render () {
+        return (
+            <div>
+                <div className="inputCell">
+                    <div className="inputText">账号 :</div>
+                    <input type="text" />
+                </div>
+                <div className="inputCell">
+                    <div className="inputText">密码 :</div>
+                    <input type="text" />
+                </div>
+                <div className="loginbutton" onClick={this.handleOnClick.bind(this)}>
+                    <Button >
+                        login
+                    </Button>
+                </div>
+
+            </div>
+        )
+    }
+}
+
+
+

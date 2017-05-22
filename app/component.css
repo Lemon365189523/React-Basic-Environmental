@@ -1,5 +1,21 @@
-.test {
-    color:blue;
-    font-size: 40px;
+
+.inputCell {
+    float: inherit;
+    padding-top: 50px;
+}
+
+.inputCell input{
+    height: 60px;
+    padding-right: 30px;
+}
+
+.inputText {
+    float: left;
+    padding: 20px;
+}
+
+.loginbutton {
+    padding: 60px;
 
 }
+
