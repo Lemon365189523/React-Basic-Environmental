@@ -16,14 +16,14 @@ module.exports = {
         path.join(__dirname, '/src/main.js')
     ],
     output: {
-        path: path.join(__dirname, '/build'),//打包后的文件存放的地方
-        filename: "bundle.js",//打包后输出文件的文件名
-        publicPath: '/'
+        path: path.join(__dirname, '/dist'),//打包后的文件存放的地方
+        filename: "index.js",//打包后输出文件的文件名
+        chunkFilename: '[name].[chunkhash].js'
     },
     devServer: {
         //查看配置网址 http://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
         port: 8080 ,//设置监听端口（默认的就是8080）
-        contentBase: "./build",//本地服务器所加载的页面所在的目录
+        contentBase: "./dist",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,//不跳转，用于开发单页面应用，依赖于HTML5 history API 设置为true点击链接还是指向index.html
         // inline: false
         publicPath: '/',
@@ -87,7 +87,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.web.js','.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+        extensions: [' ','.web.js','.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
         modules: ['node_modules', path.join(__dirname, './node_modules')],
     }
 };

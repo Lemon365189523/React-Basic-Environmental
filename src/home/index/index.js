@@ -1,14 +1,12 @@
-
 import React from "react";
-import Index from "./index/index"
+import "./index.less";
 
-export default class App extends React.Component {
+export default class Index extends React.Component {
     render (){
         return (
             <div>
-                <Index/>
+                首页
             </div>
-
         )
     }
 }
