@@ -1,6 +1,5 @@
 
 import React from 'react';
-import style from "./component.css";
 import classnames from "classnames/index";
 import { Button, Flex, InputItem ,Toast} from "antd-mobile";
 // import {observable, computed, autorun} from "mobx";
@@ -15,11 +14,11 @@ class Cpt extends React.Component {
             <div>
                 <div className="inputCell">
                     <div className="inputText">账号 :</div>
-                    <input type="text" />
+                    <InputItem />
                 </div>
                 <div className="inputCell">
                     <div className="inputText">密码 :</div>
-                    <input type="text" />
+                    <InputItem />
                 </div>
                 <div className="loginbutton" onClick={this.handleOnClick.bind(this)}>
                     <Button >
@@ -33,5 +32,4 @@ class Cpt extends React.Component {
 }
 
 export default Cpt;
-
 

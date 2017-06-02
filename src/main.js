@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import { AppContainer } from 'react-hot-loader';
 
-import Cpt from './component';
+import Login from './login/App';
 
 const render = (Component) => {
     ReactDOM.render(
@@ -14,10 +14,10 @@ const render = (Component) => {
         document.getElementById('app')
     )
 };
-render(Cpt);
+render(Login);
 
 if (module.hot) {
-    module.hot.accept('./component', () => {
-        render(Cpt)
+    module.hot.accept('./login/App', () => {
+        render(Login)
     });
 }

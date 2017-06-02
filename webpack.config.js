@@ -13,7 +13,7 @@ module.exports = {
     entry:  [
         'react-hot-loader/patch',
         'webpack/hot/only-dev-server',
-        path.join(__dirname, '/app/main.js')
+        path.join(__dirname, '/src/main.js')
     ],
     output: {
         path: path.join(__dirname, '/build'),//打包后的文件存放的地方
@@ -67,13 +67,13 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                // use: ['style-loader', 'css-loader', 'less-loader'],      // 将css打包到js里面
+                use: ['style-loader', 'css-loader', 'less-loader'],      // 将css打包到js里面
                 // 将css单独打包，需要plugins
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    //resolve-url-loader may be chained before lesss-loader if necessary
-                    use: ['css-loader', 'less-loader']
-                })
+                // use: ExtractTextPlugin.extract({
+                //     fallback: 'style-loader',
+                //     //resolve-url-loader may be chained before lesss-loader if necessary
+                //     use: ['css-loader', 'less-loader']
+                // })
             },
             {
                 test: /\.(svg)$/i,
