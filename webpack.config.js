@@ -9,6 +9,7 @@ const svgDirs = [
     // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
 ];
 
+
 module.exports = {
     entry:  [
         'react-hot-loader/patch',
@@ -62,19 +63,20 @@ module.exports = {
                         options:{
                             importLoaders: 1
                         }
-                    }
+                    },
+
                 ]
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader'],      // 将css打包到js里面
+                use: ['style-loader', 'css-loader', 'less-loader'], // 将css打包到js里面
                 // 将css单独打包，需要plugins
                 // use: ExtractTextPlugin.extract({
                 //     fallback: 'style-loader',
                 //     //resolve-url-loader may be chained before lesss-loader if necessary
                 //     use: ['css-loader', 'less-loader']
                 // })
-            },
+},
             {
                 test: /\.(svg)$/i,
                 use: ['svg-sprite-loader'],
@@ -83,7 +85,7 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 use: ['url-loader?limit=8192&name=images/[hash:8].[name].[ext]']
-            }
+            },
         ]
     },
     resolve: {

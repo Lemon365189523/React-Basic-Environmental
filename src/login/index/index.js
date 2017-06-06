@@ -3,26 +3,33 @@ import React from 'react';
 import classnames from "classnames/index";
 import { Button, Flex, InputItem ,Toast} from "antd-mobile";
 // import {observable, computed, autorun} from "mobx";
+import { Link, BrowserRouter  } from 'react-router-dom';
 import "./index.less";
-
+import { createBrowserHistory} from 'history';
+const history = createBrowserHistory();
 
 class Cpt extends React.Component {
     constructor(props) {
-        super()
+        super(props)
         this.state = {
             username: "",
             userpw: ""
-        }
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
+
+
 
     handleClick = ()=> {
         const {username,userpw} = this.state;
         if (username==="lemon" & userpw === "123456"){
-            Toast.show("成功登陆",1)
+            //window.location.replace("/home")
+            history.push('/home')
         }else {
             Toast.show("账号或密码错误",1)
         }
     }
+
 
     handleUsernameChange(username){
         this.setState({
@@ -52,7 +59,7 @@ class Cpt extends React.Component {
                     </div>
 
                 </div>
-                <div className="loginbutton" onClick={this.handleClick.bind(this)}>
+                <div className="loginbutton" onClick={this.handleClick}>
                     <Button >
                         login
                     </Button>
@@ -62,6 +69,7 @@ class Cpt extends React.Component {
         )
     }
 }
+
 
 export default Cpt;
 
