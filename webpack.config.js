@@ -10,9 +10,10 @@ const ExtractTextPlugin = require( 'extract-text-webpack-plugin' )
 const CopyWebpackPlugin = require( 'copy-webpack-plugin')
 const extractCss = new ExtractTextPlugin( 'style/[name]-css-[hash:6].css' )
 const extractScss = new ExtractTextPlugin( 'style/[name]-scss-[hash:6].css' )
-const extractLess = new ExtractTextPlugin( 'style/[path]___[name]__[local]___[hash:base64:5].css' )
+const extractLess = new ExtractTextPlugin( 'style/[name]-less-[hash:6].css' )
 const precss       = require('precss');
 const autoprefixer = require('autoprefixer');
+
 
 const common = {
     rootPath: rootPath,
@@ -87,7 +88,8 @@ if ( isDev ) {
                     return [precss, autoprefixer];
                 }
             }
-        })
+        }),
+        new webpack.NamedModulesPlugin()
     ]
 }
 
@@ -107,7 +109,7 @@ const styleLoaders = {
             //将css进行hash编码，保证模块性，保证单独使用，而不会污染全局
             modules: true,
             importLoaders: 1,
-            locatlIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+            locatlIdentName: "[local]-[hash:base64:6]"//"[path]___[name]__[local]___[hash:base64:5]"
         }
     },
     postcss: {

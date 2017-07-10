@@ -11,7 +11,10 @@ import Test from "./components/test/index";
 
 const isDev = !(process.env.NODE_ENV === 'development')
 
+
+
 let render = () => {
+
     ReactDOM.render(
         <AppContainer>
             <div>
